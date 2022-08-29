@@ -1,0 +1,23 @@
+package com.hb.NIO;
+
+import java.util.concurrent.TimeUnit;
+
+public class LoginServlet {
+
+    private static String usernameRef;
+    private static String passwordRef;
+
+    synchronized public static void doPost(String username, String password){
+        try{
+            usernameRef = username;
+            if(username.equals("a")){
+                TimeUnit.SECONDS.sleep(5);
+            }
+            passwordRef = password;
+            System.out.println("username = " + usernameRef + " password = " + passwordRef);
+        }catch(InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
+}
