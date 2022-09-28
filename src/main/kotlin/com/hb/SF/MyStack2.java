@@ -16,6 +16,15 @@ public class MyStack2 {
     public void push(int newNum){
         if(this.stackMin.isEmpty()){
             this.stackMin.push(newNum);
+        } else if (newNum < this.getmin()){
+            
         }
+    }
+
+    public int getmin(){
+        if(this.stackMin.isEmpty()){
+            throw new RuntimeException("Your stack is empty.");
+        }
+        return this.stackMin.peek();
     }
 }
